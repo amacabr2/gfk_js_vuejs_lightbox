@@ -3,6 +3,7 @@
     <div class="lightbox" v-if="image" @click="close">
 
         <lightbox-image :image="image"></lightbox-image>
+        <div class="lightbox_close" @click="close"></div>
 
     </div>
 
