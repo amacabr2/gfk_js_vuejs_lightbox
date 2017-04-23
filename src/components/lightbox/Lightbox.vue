@@ -2,8 +2,14 @@
 
     <div class="lightbox" v-if="image" @click="close">
 
-        <lightbox-image :image="image"></lightbox-image>
+        <transition name="lightbox-enter">
+            <lightbox-image :image="image" :key="image"></lightbox-image>
+        </transition>
+
         <div class="lightbox_close" @click="close"></div>
+        <div class="lightbox_btn lightbox_next" @click.stop.prevent="next"></div>
+        <div class="lightbox_btn lightbox_prev" @click.stop.prevent="prev"></div>
+
 
     </div>
 
@@ -31,6 +37,14 @@
 
             close() {
                 store.close();
+            },
+
+            next() {
+                store.next();
+            },
+
+            prev() {
+                store.prev();
             }
 
         },

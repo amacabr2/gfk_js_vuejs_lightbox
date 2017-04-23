@@ -19,6 +19,20 @@ class LightboxStore {
         this.state.index = false;
     }
 
+    next() {
+        this.state.index++;
+        if (this.state.index >= this.state.images.length) {
+            this.state.index = 0;
+        }
+    }
+
+    prev() {
+        this.state.index--;
+        if (this.state.index < 0) {
+            this.state.index = this.state.images.length - 1;
+        }
+    }
+
 }
 
 export default new LightboxStore()

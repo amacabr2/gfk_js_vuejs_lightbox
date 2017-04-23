@@ -22,9 +22,6 @@
   background-size:50px 50px;
   transition: transform .3s;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.2);
-  }
 }
 
 .lightbox_loading {
@@ -48,6 +45,32 @@
     border-radius: 20px;
     animation: lightbox-loading 1s ease infinite;
   }
+}
+
+.lightbox_btn {
+  position: fixed;
+  top: 50%;
+  width: 50px;
+  height: 90px;
+  margin-top: -40px;
+  background-color: transparent;
+  background-size: 50px 90px;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+.lightbox_next {
+  right: 20px;
+  background-image: url("next.svg");
+}
+
+.lightbox_prev {
+  left: 20px;
+  background-image: url("prev.svg");
+}
+
+.lightbox_btn:hover, .lightbox_close:hover {
+  transform: scale(1.2);
 }
 
 .lightbox-fade-enter-active, .lightbox-fade-leave-active {
