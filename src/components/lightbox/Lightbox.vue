@@ -1,7 +1,11 @@
 <template>
-    <div>
-        {{ url }}
+
+    <div class="lightbox" v-if="image">
+
+        <img :src="image" width="50" height="50">
+
     </div>
+
 </template>
 
 <script>
@@ -19,8 +23,10 @@
 
         computed: {
 
-            url() {
-                return this.state.image;
+            image() {
+                if (this.state.index !== false) {
+                    return this.state.images[this.state.index];
+                }
             }
 
         }
@@ -28,3 +34,5 @@
     }
 
 </script>
+
+<style src="./lightbox.scss" lang="scss"></style>
