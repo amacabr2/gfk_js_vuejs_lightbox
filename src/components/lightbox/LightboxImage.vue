@@ -1,8 +1,9 @@
 <template>
 
-
-
-    <img class="lightbox_image" :src="src" :style="style">
+    <div @click.stop>
+        <div v-if="loading">Chargement...</div>
+        <img class="lightbox_image" :src="src" :style="style">
+    </div>
 
 </template>
 

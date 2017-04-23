@@ -1,6 +1,6 @@
 <template>
 
-    <div class="lightbox" v-if="image">
+    <div class="lightbox" v-if="image" @click="close">
 
         <lightbox-image :image="image"></lightbox-image>
 
@@ -24,6 +24,14 @@
             return {
                 state: store.state
             }
+        },
+
+        methods: {
+
+            close() {
+                store.close();
+            }
+
         },
 
         computed: {
