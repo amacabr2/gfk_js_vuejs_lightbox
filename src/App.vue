@@ -9,14 +9,14 @@
 
 <script>
 
-    import Ligthbox from './components/lightbox/Lightbox.vue'
+    import Lightbox from './components/lightbox/Lightbox.vue'
 
     export default {
 
         name: 'app',
 
         components: {
-            Ligthbox
+            Lightbox
         }
 
     }

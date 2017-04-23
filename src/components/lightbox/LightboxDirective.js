@@ -1,10 +1,11 @@
 import Vue from 'vue';
+import store from './LightboxStore';
 
 Vue.directive('lightbox', {
 
     bind(el, binding) {
         el.addEventListener('click', function () {
-            open(el.getAttribute('href'));
+            store.state.image = el.getAttribute('href');
         })
     }
 

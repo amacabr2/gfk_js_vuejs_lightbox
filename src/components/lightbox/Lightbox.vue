@@ -6,6 +6,8 @@
 
 <script>
 
+    import './LightboxDirective'
+
     export default {
 
         data() {
