@@ -22,14 +22,10 @@
             }
         },
 
-        mounted() {
+        methods: {
 
-            let image = new window.Image();
+            resizeImage(image) {
 
-            image.onload = _ => {
-
-                this.loading = false;
-                this.src = this.image;
                 let width = image.width;
                 let height = image.height;
 
@@ -51,9 +47,24 @@
                     top: ((window.innerHeight - height) * 0.5) + 'px',
                     left: ((window.innerWidth - width) * 0.5) + 'px'
                 }
+
+            }
+
+        },
+
+        mounted(){
+
+            let image = new window.Image();
+
+            image.onload = _ => {
+                this.loading = false;
+                this.src = this.image;
+                this.resizeImage(image);
             };
 
             image.src = this.image;
+
+            window.addEventListener('resize', this.resizeImage(image));
 
         }
 
