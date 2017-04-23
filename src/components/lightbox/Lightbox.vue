@@ -2,7 +2,7 @@
 
     <div class="lightbox" v-if="image">
 
-        <img :src="image" width="50" height="50">
+        <lightbox-image :image="image"></lightbox-image>
 
     </div>
 
@@ -11,9 +11,14 @@
 <script>
 
     import './LightboxDirective'
+    import LightboxImage from './LightboxImage.vue'
     import store from './LightboxStore'
 
     export default {
+
+        components: {
+            LightboxImage
+        },
 
         data() {
             return {
