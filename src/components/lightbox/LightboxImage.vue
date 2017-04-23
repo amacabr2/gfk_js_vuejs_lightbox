@@ -68,10 +68,16 @@
 
             image.src = this.image;
 
-            window.addEventListener('resize', () => {
+            this.resizeEvent = () => {
                 this.resizeImage(image);
-            });
+            };
 
+            window.addEventListener('resize', this.resizeEvent);
+
+        },
+
+        destroy() {
+            window.removeEventListener('resize', this.resizeEvent);
         }
 
     }
