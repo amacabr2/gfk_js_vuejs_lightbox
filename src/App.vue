@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <a href="http://lorempicsum.com/futurama/800/600/1" v-lightbox>
-            <img src="http://lorempicsum.com/futurama/150/150/1" alt="">
+        <a :href="'http://lorempicsum.com/futurama/800/600/' + n" v-lightbox v-for="n in 9">
+            <img :src="'http://lorempicsum.com/futurama/150/150/' + n" alt="">
         </a>
         <lightbox></lightbox>
     </div>
