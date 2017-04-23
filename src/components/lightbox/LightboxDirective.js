@@ -7,7 +7,7 @@ Vue.directive('lightbox', {
         let index = store.addImage(el.getAttribute('href'));
         el.addEventListener('click', function (e) {
             e.preventDefault();
-            store.open(index)
+            store.open(index);
         })
     }
 

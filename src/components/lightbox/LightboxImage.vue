@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="loading">Chargement...</div>
+
 
     <img class="lightbox_image" :src="src" :style="style">
 
@@ -64,7 +64,9 @@
 
             image.src = this.image;
 
-            window.addEventListener('resize', this.resizeImage(image));
+            window.addEventListener('resize', () => {
+                this.resizeImage(image);
+            });
 
         }
 
