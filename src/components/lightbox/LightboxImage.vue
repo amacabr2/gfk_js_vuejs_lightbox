@@ -3,8 +3,7 @@
     <div @click.stop>
         <div v-if="loading" class="lightbox_loading"></div>
         <transition name="lightbox-fade">
-            <img class="lightbox_image" :src="src" :style="style" :key="src
-">
+            <img class="lightbox_image" :src="src" :style="style" :key="src">
         </transition>
     </div>
 

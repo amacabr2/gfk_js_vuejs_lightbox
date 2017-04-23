@@ -11,8 +11,8 @@ class LightboxStore {
         return this.state.images.push(url) - 1;
     }
 
-    open(index) {
-        this.state.index = index;
+    open(url) {
+        this.state.index = this.state.images.findIndex(image => image === url);
     }
 
     close() {
@@ -31,6 +31,10 @@ class LightboxStore {
         if (this.state.index < 0) {
             this.state.index = this.state.images.length - 1;
         }
+    }
+
+    remove(url) {
+        this.state.images = this.state.images.filter(image => image !== url);
     }
 
 }

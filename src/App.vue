@@ -1,10 +1,28 @@
 <template>
+
     <div id="app">
-        <a :href="'http://lorempicsum.com/futurama/800/600/' + n" v-lightbox v-for="n in 9">
-            <img :src="'http://lorempicsum.com/futurama/150/150/' + n" alt="">
-        </a>
-        <lightbox></lightbox>
+
+        <div v-if="title === 'futurama'">
+            <a :href="'http://lorempicsum.com/futurama/800/600/' + n" v-lightbox v-for="n in 9">
+                <img :src="'http://lorempicsum.com/futurama/150/150/' + n" alt="">
+            </a>
+            <lightbox></lightbox>
+        </div>
+
+        <section>
+            <div v-if="title === 'rio'">
+                <a :href="'http://lorempicsum.com/rio/800/600/' + n" v-lightbox v-for="n in 9">
+                    <img :src="'http://lorempicsum.com/rio/150/150/' + n" alt="">
+                </a>
+                <lightbox></lightbox>
+            </div>
+        </section>
+
+        <button @click="title= 'rio'">RIO</button>
+        <button @click="title= 'futurama'">FUTURAMA</button>
+
     </div>
+
 </template>
 
 <script>
@@ -17,6 +35,12 @@
 
         components: {
             Lightbox
+        },
+
+        data() {
+            return {
+                title: 'futurama',
+            }
         }
 
     }
